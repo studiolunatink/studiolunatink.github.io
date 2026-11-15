@@ -7,16 +7,88 @@
 <meta name="description" content="LunaTink&#x27;in yaptığı tüm oyunlar. Her biri kendi adıyla, kendi dünyasıyla.">
 <meta property="og:title" content="Oyunlar · LunaTink">
 <meta property="og:description" content="LunaTink&#x27;in yaptığı tüm oyunlar. Her biri kendi adıyla, kendi dünyasıyla.">
-<meta property="og:image" content="assets/og-image.png">
+<meta property="og:image" content="og-image.png">
 <meta name="theme-color" content="#1c1a3a">
-<link rel="alternate" hreflang="en" href="en/games.html">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="icon" href="assets/favicon-48.png" sizes="48x48" type="image/png">
-<link rel="apple-touch-icon" href="assets/icon-192.png">
+<link rel="alternate" hreflang="en" href="games.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-48.png" sizes="48x48" type="image/png">
+<link rel="apple-touch-icon" href="icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Outfit:wght@400;600;700&display=swap">
-<link rel="stylesheet" href="assets/style.css">
+<style>
+:root{--navy:#1c1a3a;--navy-2:#2c2960;--night:#141230;--gold:#f2c46b;--gold-d:#b8862b;--cream:#f4eee0;
+--soft:#d8d3e8;--muted:#b0aacb;--line:#f2c46b33;--panel:#ffffff0d;
+--body:"Outfit",system-ui,-apple-system,"Segoe UI",sans-serif;--display:"Fraunces",Georgia,serif;color-scheme:dark}
+*{box-sizing:border-box}
+html{background:var(--night)}
+body{margin:0;min-height:100vh;display:flex;flex-direction:column;color:var(--cream);font-family:var(--body);font-size:17px;line-height:1.6;
+background:radial-gradient(110% 70% at 85% 0%,var(--navy-2) 0%,var(--navy) 50%,var(--night) 100%) fixed}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.8;
+background-image:radial-gradient(1.5px 1.5px at 12% 18%,#fff9 50%,transparent 51%),radial-gradient(1px 1px at 28% 64%,#fff8 50%,transparent 51%),radial-gradient(1.5px 1.5px at 52% 12%,#fffa 50%,transparent 51%),radial-gradient(1px 1px at 68% 48%,#fff7 50%,transparent 51%),radial-gradient(2px 2px at 86% 26%,#f2c46bcc 50%,transparent 51%),radial-gradient(1px 1px at 93% 78%,#fff8 50%,transparent 51%),radial-gradient(1px 1px at 7% 86%,#fff6 50%,transparent 51%),radial-gradient(1.5px 1.5px at 40% 90%,#fff6 50%,transparent 51%),radial-gradient(1px 1px at 76% 92%,#fff7 50%,transparent 51%)}
+body>*{position:relative;z-index:1}
+a{color:var(--gold)}
+a:focus-visible,.btn:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+.wrap{width:100%;max-width:1040px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left));padding-right:max(18px,env(safe-area-inset-right))}
+.top{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;padding-block:18px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--gold);text-decoration:none;font-family:var(--display);font-weight:700;font-size:20px}
+.brand .sym{width:36px;height:auto}
+.top nav{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.top nav a{color:var(--soft);text-decoration:none;font-size:15px}
+.top nav a:hover,.top nav a[aria-current]{color:var(--gold)}
+.lang{display:flex;gap:4px;font-size:13px;font-weight:700}
+.lang a,.lang span{padding:3px 8px;border-radius:6px;text-decoration:none}
+.lang span{background:var(--gold);color:var(--navy)}
+.lang a{color:var(--soft);border:1px solid var(--line)}
+main{flex:1;padding-block:10px 60px}
+.hero{display:grid;justify-items:center;text-align:center;gap:18px;padding-block:56px 48px}
+.hero .logo{width:min(460px,86%);height:auto;color:var(--gold)}
+.hero p{margin:0;max-width:46ch;color:var(--soft);font-size:19px}
+h1,h2,h3{font-family:var(--display);line-height:1.15;text-wrap:balance;color:var(--cream);margin:0}
+h1{font-size:clamp(32px,6vw,48px)}
+h2{font-size:clamp(24px,4vw,30px)}
+h3{font-size:21px}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+.section{display:grid;gap:20px;padding-block:28px}
+.games{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:18px}
+.game{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px;display:grid;gap:10px;align-content:start;text-decoration:none;color:inherit;transition:transform .2s,border-color .2s}
+a.game:hover{transform:translateY(-3px);border-color:#f2c46b88}
+.game .ic{width:72px;height:72px;border-radius:18px;background:linear-gradient(135deg,#f9b9a4,#c9b6f2 55%,#9fd8c9)}
+.game p{margin:0;color:var(--muted);font-size:15px}
+.game.soon{border-style:dashed;opacity:.6}
+.game.soon .ic{background:#ffffff14}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--navy);font-weight:700;text-decoration:none;padding:11px 20px;border-radius:999px;font-size:16px;justify-self:start}
+.btn.ghost{background:transparent;color:var(--gold);border:1.5px solid var(--gold)}
+.btn[aria-disabled]{opacity:.65;cursor:default}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.about{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:18px}
+.about div{border-top:1px solid var(--line);padding-top:14px}
+.about h3{font-size:18px;margin-bottom:6px;color:var(--gold)}
+.about p{margin:0;color:var(--soft);font-size:16px}
+.game-hero{display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center;padding-block:36px 10px}
+.game-hero .ic{width:120px;height:120px;border-radius:28px;background:linear-gradient(135deg,#f9b9a4,#c9b6f2 55%,#9fd8c9);box-shadow:0 10px 30px #0006}
+.game-hero p{margin:6px 0 0;color:var(--soft);max-width:52ch}
+@media (max-width:560px){.game-hero{grid-template-columns:1fr}}
+.facts{display:flex;flex-wrap:wrap;gap:10px;padding:0;margin:0;list-style:none}
+.facts li{border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:6px 14px;font-size:15px;color:var(--soft)}
+.facts b{color:var(--gold);font-variant-numeric:tabular-nums}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:16px;counter-reset:s;padding:0;margin:0;list-style:none}
+.steps li{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;color:var(--soft)}
+.steps li::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--gold);color:var(--navy);font-weight:700;margin-bottom:10px}
+.prose{max-width:68ch;display:grid;gap:14px}
+.prose h1{margin-top:30px}
+.prose h2{font-size:22px;margin-top:14px;color:var(--gold)}
+.prose p,.prose li{color:var(--soft)}
+.prose p,.prose ul{margin:0}
+.prose .meta{color:var(--muted);font-size:15px}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+.box ul{margin:0;padding-left:20px;display:grid;gap:6px}
+.mail{font-weight:700;user-select:all}
+footer{border-top:1px solid var(--line);padding-block:24px 30px;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+footer a{color:var(--soft)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
 </head>
 <body>
 <header class="wrap top">
@@ -25,7 +97,7 @@
     <a href="index.html">Ana sayfa</a>
     <a href="oyunlar.html" aria-current="page">Oyunlar</a>
     <a href="index.html#contact">İletişim</a>
-    <span class="lang"><span>TR</span><a href="en/games.html" hreflang="en">EN</a></span>
+    <span class="lang"><span>TR</span><a href="games.html" hreflang="en">EN</a></span>
   </nav>
 </header>
 <main class="wrap">
